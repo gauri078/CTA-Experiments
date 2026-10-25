@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Disco Button</title>
+<meta name="description" content="A button that drops a mirror ball and throws light across the page. Tune it, then copy the code.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="stylesheet" href="../../assets/bench.css">
+<link rel="stylesheet" href="../../assets/vendor/dialkit/dialkit.css">
+<style>
+  /* faint dots on the stage so the light spots have something to reveal */
+  .stage { background-image: radial-gradient(circle, var(--line) 1px, transparent 1.3px); background-size: 20px 20px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div>
+      <a class="crumb" href="../../index.html">← cta experiments</a>
+      <h1>disco button</h1>
+      <p class="lede">Hover the button and a mirror ball drops in and spins. The page around it dims, and each spot of light it throws shows what's underneath. Click it and the ball keeps turning until the file has downloaded, for at least two seconds.</p>
+    </div>
+    <div class="seg" role="group" aria-label="Theme">
+      <button type="button" data-theme-set="light" aria-pressed="false">light</button>
+      <button type="button" data-theme-set="dark" aria-pressed="false">dark</button>
+    </div>
+  </header>
+
+  <div class="bench">
+    <section class="stage-col" aria-label="Preview">
+      <div class="stage" id="stage">
+        <a class="disco-button" id="demo" href="#" data-demo><span class="disco-button__label">Download resume</span></a>
+      </div>
+      <div class="stage-bar">
+        <span class="state">state: <b id="state" aria-live="polite">rest</b></span>
+        <div class="row">
+          <button class="chip" type="button" id="pin" aria-pressed="false">keep it on</button>
+          <button class="chip" type="button" id="reroll">re-roll tiles</button>
+          <button class="chip" type="button" id="reset">reset</button>
+        </div>
+      </div>
+      <div class="export">
+        <div class="row" style="justify-content:space-between">
+          <div class="row">
+            <button class="btn btn--solid" type="button" id="copy-code">copy code</button>
+            <button class="btn" type="button" id="copy-ai">copy for AI</button>
+          </div>
+          <span class="toast" id="toast" role="status"></span>
+        </div>
+        <p>"Copy code" gives one self-contained snippet with your settings baked in. "Copy for AI" adds instructions, so you can paste it into an AI assistant and ask it to put the button on your site.</p>
+        <details>
+          <summary>see the code</summary>
+          <pre id="code" tabindex="0"></pre>
+        </details>
+      </div>
+    </section>
+
+    <aside class="panel" aria-label="Settings">
+      <div id="panel"></div>
+      <p class="panel-note">Settings panel by <a href="https://github.com/joshpuckett/dialkit">DialKit</a>.</p>
+    </aside>
+  </div>
+</div>
+
+<script src="../../assets/vendor/dialkit/dialkit.js"></script>
+<script src="../../assets/bench.js"></script>
+<script src="disco-button.js"></script>
+<script src="playground.js"></script>
+</body>
+</html>

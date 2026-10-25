@@ -1,0 +1,30 @@
+/* Shared playground layout: the button on a stage on the left,
+   the DialKit panel on the right, the copy options under the stage. */
+.bench { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 22px; align-items: start; }
+.stage-col { position: sticky; top: 16px; display: grid; gap: 12px; min-width: 0; }
+.stage {
+  position: relative; isolation: isolate; overflow: hidden; border-radius: 18px; border: 1px solid var(--line);
+  min-height: clamp(360px, 56vh, 560px); display: grid; place-items: center; padding: 60px 16px;
+  background: var(--stage); transition: background-color .4s ease;
+}
+.stage-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; }
+.state { font-family: var(--mono); font-size: 12px; color: var(--muted); letter-spacing: .04em; text-transform: uppercase; }
+.state b { color: var(--accent); font-weight: 500; }
+.row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.export { border: 1px solid var(--line); border-radius: 14px; background: var(--surface); padding: 14px; display: grid; gap: 12px; }
+.export p { margin: 0; color: var(--muted); font-size: 13.5px; }
+.export details summary { cursor: pointer; font-size: 13.5px; color: var(--muted); }
+.export pre { margin: 10px 0 0; max-height: 280px; overflow: auto; background: var(--sunk); border-radius: 10px; padding: 12px; font-family: var(--mono); font-size: 11.5px; line-height: 1.55; white-space: pre; }
+.toast { font-family: var(--mono); font-size: 12px; color: var(--accent); min-height: 1em; }
+
+.panel { min-width: 0; position: sticky; top: 16px; }
+.panel-note { margin: 10px 2px 0; color: var(--muted); font-size: 12.5px; }
+
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; padding: 3px; gap: 2px; background: var(--surface); }
+.seg button { border: 0; background: none; border-radius: 999px; padding: 6px 12px; font-size: 13px; cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+
+@media (max-width: 960px) {
+  .bench { grid-template-columns: 1fr; }
+  .stage-col, .panel { position: static; }
+}

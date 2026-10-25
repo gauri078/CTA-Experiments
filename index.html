@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CTA Experiments</title>
+<meta name="description" content="Call-to-action buttons with a delight moment. Each one is editable and copies out as a self-contained snippet.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: 18px; margin-top: 34px; }
+  .card { display: grid; grid-template-rows: auto 1fr; border: 1px solid var(--line); border-radius: 18px; background: var(--surface); overflow: hidden; text-decoration: none; }
+  .card-stage { min-height: 230px; display: grid; place-items: center; padding: 50px 16px; background: var(--stage); }
+  .card-body { padding: 16px 18px 18px; display: grid; gap: 6px; align-content: start; }
+  .card-body h2 { margin: 0; font-family: var(--display); font-size: 22px; font-weight: 600; letter-spacing: -.01em; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .card-body p { margin: 0; color: var(--muted); font-size: 14.5px; }
+  .open { font-family: var(--mono); font-size: 12px; color: var(--accent); margin-top: 6px; }
+  .soon { font-family: var(--mono); font-size: 11px; font-weight: 400; letter-spacing: .04em; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 3px 9px; }
+  .card--soon .card-stage { color: var(--muted); font-family: var(--mono); font-size: 13px; }
+  .card-stage--disco { position: relative; isolation: isolate; overflow: hidden; }
+  footer { margin-top: 48px; color: var(--muted); font-size: 13.5px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <span class="crumb">by gauri tsering sharma</span>
+    <h1>cta experiments</h1>
+    <p class="lede">Call-to-action buttons with a small delight moment built in. Open one to tune its colours and behaviour, then copy it as a single snippet or hand it to an AI to drop into your site.</p>
+  </header>
+
+  <div class="grid">
+    <!-- One card per CTA. To add one, copy this block and point it at the new folder. -->
+    <a class="card" href="ctas/vine/index.html">
+      <div class="card-stage" style="--stage:#f4f1ec">
+        <span class="vine-cta" id="vine-demo"><span class="vine-cta__label">Download resume</span></span>
+      </div>
+      <div class="card-body">
+        <h2>vine</h2>
+        <p>Vines slip out from behind the button, wrap over its edges and open into flowers.</p>
+        <span class="open">open the playground →</span>
+      </div>
+    </a>
+
+    <a class="card" href="ctas/disco-button/index.html">
+      <div class="card-stage card-stage--disco" id="disco-stage" style="--stage:#f2eee6">
+        <span class="disco-button" id="disco-demo"><span class="disco-button__label">Download resume</span></span>
+      </div>
+      <div class="card-body">
+        <h2>disco button</h2>
+        <p>A mirror ball drops in above the button. The page dims and its light spots sweep across, showing what's underneath.</p>
+        <span class="open">open the playground →</span>
+      </div>
+    </a>
+  </div>
+
+  <footer>Every button here is plain HTML, CSS and JavaScript with no dependencies. The playgrounds use <a href="https://github.com/joshpuckett/dialkit">DialKit</a> for their settings panels. MIT licensed.</footer>
+</div>
+
+<script src="ctas/vine/vine-cta.js"></script>
+<script src="ctas/disco-button/disco-button.js"></script>
+<script>
+  VineCTA.mount(document.getElementById("vine-demo"), VineCTA.presets.oxblood);
+  // hover previews only; clicking the card opens the playground
+  DiscoButton.mount(document.getElementById("disco-demo"), { spots: 40, ballSize: 34, hang: 16 }, { container: document.getElementById("disco-stage"), hoverOnly: true });
+</script>
+</body>
+</html>
