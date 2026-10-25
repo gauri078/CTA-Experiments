@@ -27,7 +27,7 @@
   function initTheme() {
     var saved = null;
     try { saved = localStorage.getItem(KEY); } catch (e) {}
-    var mode = saved || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    var mode = saved || "light"; // beige by default; dark only when someone picks it
     document.querySelectorAll("[data-theme-set]").forEach(function (b) {
       b.addEventListener("click", function () { setTheme(b.getAttribute("data-theme-set")); });
     });

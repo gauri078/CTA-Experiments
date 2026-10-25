@@ -67,8 +67,8 @@ Two things to know:
 | `minDuration` | `2` | After a click, keep spinning at least this long, in seconds |
 | `fadeIn` | `260` | ms |
 | `fadeOut` | `340` | ms |
-| `busyText` | `"Fetching resume…"` | Label while downloading; `""` keeps the label |
-| `doneText` | `"Resume downloaded"` | Label once done; `""` keeps the label |
+| `busyText` | `"Downloading…"` | Label while downloading; `""` keeps the label |
+| `doneText` | `"Downloaded"` | Label once done; `""` keeps the label |
 
 ## API
 

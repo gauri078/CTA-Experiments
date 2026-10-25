@@ -7,7 +7,7 @@
   var clone = function (o) { return JSON.parse(JSON.stringify(o)); };
   var D = DiscoButton.defaults;
   var cfg = clone(D);
-  var label = "Download resume";
+  var label = "button";
   var pretend = 1; // seconds the fake download takes on the stage
 
   var demo = document.getElementById("demo");

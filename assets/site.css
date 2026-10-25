@@ -1,60 +1,56 @@
 /* Shared look for the gallery and every playground.
-   Layout idea: a quiet lab bench. The button under test sits on a stage,
-   the knobs sit in a panel beside it, everything else stays out of the way. */
+   Beige paper and warm black ink. Mono for names, labels and numbers;
+   a quiet sans for anything you read in sentences. */
 :root {
-  --bg: #f3f0ec;
-  --surface: #fbfaf8;
-  --sunk: #ebe6e0;
-  --ink: #241d1b;
-  --muted: #6e6460;
-  --line: #ddd5ce;
-  --accent: #8a2c3b;
-  --accent-ink: #fbf3ef;
-  --stage: #f4f1ec;
-  --display: "Bricolage Grotesque", "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
-  --body: "Hanken Grotesk", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
-  --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --bg: #f3eee4;        /* beige paper */
+  --surface: #fbf8f2;   /* near-white card */
+  --sunk: #ebe4d6;      /* code boxes, wells */
+  --stage: #f8f4ec;     /* where the button sits */
+  --ink: #1f1a16;       /* warm black */
+  --muted: #6f665b;
+  --line: #d9cfbf;
+  --accent: #1f1a16;
+  --accent-ink: #f8f4ec;
+  --display: "Martian Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --body: "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "Martian Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   color-scheme: light;
 }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #161312; --surface: #1e1a19; --sunk: #121010; --ink: #efe8e3; --muted: #a39892;
-    --line: #342d2b; --accent: #e08a97; --accent-ink: #1d1012; --stage: #1b1716; color-scheme: dark;
-  }
-}
+/* dark is opt-in from the switch on the playgrounds, never automatic */
 :root[data-theme="dark"] {
-  --bg: #161312; --surface: #1e1a19; --sunk: #121010; --ink: #efe8e3; --muted: #a39892;
-  --line: #342d2b; --accent: #e08a97; --accent-ink: #1d1012; --stage: #1b1716; color-scheme: dark;
+  --bg: #1a1714; --surface: #221e1a; --sunk: #15120f; --stage: #1e1a17; --ink: #f1ebe0; --muted: #a59a8c;
+  --line: #3a332c; --accent: #f1ebe0; --accent-ink: #1a1714; color-scheme: dark;
 }
 
 * { box-sizing: border-box; }
 html, body { margin: 0; }
-body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 15px; line-height: 1.5; }
+body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 15px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
 a { color: inherit; }
 button, input, select { font: inherit; color: inherit; }
-:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
 
 .wrap {
-  max-width: 1240px;
+  max-width: 1180px;
   margin: 0 auto;
-  padding-block: 28px 64px;
+  padding-block: 36px 72px;
   padding-left: max(16px, env(safe-area-inset-left, 0px));
   padding-right: max(16px, env(safe-area-inset-right, 0px));
 }
 
-.top { display: flex; align-items: baseline; justify-content: space-between; gap: 12px 24px; flex-wrap: wrap; margin-bottom: 26px; }
-.crumb { font-family: var(--mono); font-size: 12px; color: var(--muted); text-decoration: none; letter-spacing: .02em; }
-.crumb:hover { color: var(--ink); }
-h1 { font-family: var(--display); font-weight: 700; font-size: clamp(30px, 5vw, 52px); line-height: 1.02; letter-spacing: -.025em; margin: 6px 0 0; text-wrap: balance; }
-.lede { color: var(--muted); max-width: 58ch; margin: 10px 0 0; font-size: 16px; }
+.top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px 24px; flex-wrap: wrap; margin-bottom: 28px; }
+.crumb { font-family: var(--mono); font-size: 11px; color: var(--muted); text-decoration: none; letter-spacing: .04em; text-transform: uppercase; }
+a.crumb:hover { color: var(--ink); }
+h1 { font-family: var(--display); font-weight: 700; font-size: clamp(30px, 5.2vw, 56px); line-height: 1; letter-spacing: -.06em; margin: 12px 0 0; text-wrap: balance; }
+.lede { color: var(--muted); max-width: 56ch; margin: 14px 0 0; font-size: 16px; text-wrap: pretty; }
 
 .chip, .btn {
   display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--line); background: var(--surface);
-  border-radius: 999px; padding: 7px 14px; font-size: 13.5px; cursor: pointer; text-decoration: none; white-space: nowrap;
+  border-radius: 999px; padding: 7px 14px; font-family: var(--mono); font-size: 11.5px; letter-spacing: .02em;
+  cursor: pointer; text-decoration: none; white-space: nowrap;
 }
-.chip:hover, .btn:hover { border-color: var(--muted); }
+.chip:hover, .btn:hover { border-color: var(--ink); }
 .chip[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
-.btn--solid { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
-.btn--solid:hover { filter: brightness(1.05); border-color: var(--accent); }
+.btn--solid { background: var(--ink); color: var(--accent-ink); border-color: var(--ink); }
+.btn--solid:hover { opacity: .9; }
 
 .mono { font-family: var(--mono); }

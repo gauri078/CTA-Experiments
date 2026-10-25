@@ -7,7 +7,7 @@
   var clone = function (o) { return JSON.parse(JSON.stringify(o)); };
   var D = VineCTA.defaults;
   var cfg = Object.assign(clone(D), clone(VineCTA.presets.oxblood));
-  var label = "Download resume";
+  var label = "button";
   var keepOpen = true;
 
   var demo = document.getElementById("demo");

@@ -57,8 +57,8 @@
       minDuration: 2, // after a click, keep spinning at least this long, in seconds
       fadeIn: 260, // ms
       fadeOut: 340, // ms
-      busyText: "Fetching resume…", // label while downloading; "" keeps the label
-      doneText: "Resume downloaded", // label once done; "" keeps the label
+      busyText: "Downloading…", // label while downloading; "" keeps the label
+      doneText: "Downloaded", // label once done; "" keeps the label
     };
 
     var PRESETS = {
