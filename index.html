@@ -39,12 +39,9 @@
   .card:hover { transform: translateY(-3px); box-shadow: 0 3px 0 var(--ink); }
   .card-stage { position: relative; isolation: isolate; overflow: hidden; min-height: 230px; display: grid; place-items: center; padding: 50px 16px;
     background: var(--stage); border-bottom: 1px solid var(--ink); }
-  .card-tag { position: absolute; top: 12px; left: 14px; font-family: var(--mono); font-size: 10.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
   .card-body { padding: 16px 18px 18px; display: grid; gap: 8px; align-content: start; }
   .card-body h2 { margin: 0; font-family: var(--mono); font-size: 18px; font-weight: 500; letter-spacing: -.04em; }
   .card-body p { margin: 0; color: var(--muted); font-size: 14.5px; }
-  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 2px; }
-  .tags span { font-family: var(--mono); font-size: 10.5px; letter-spacing: .04em; border: 1px solid var(--line); border-radius: 999px; padding: 3px 9px; color: var(--muted); }
   .open { font-family: var(--mono); font-size: 11.5px; color: var(--ink); margin-top: 4px; }
   .card:hover .open { text-decoration: underline; text-underline-offset: 4px; }
 
@@ -110,7 +107,7 @@
   <i class="doodle d16"><svg viewBox="-6 -6 112 112"><g filter="url(#crayon)" fill="none" stroke="#ec8fb3" stroke-linejoin="round" stroke-linecap="round"><path d="M50 50 C34.0 36.9 37.0 12.5 50 12.5 C63.0 12.5 66.0 36.9 50 50 Z" transform="rotate(4 50 50)" stroke-width="6.2"/><path d="M50 50 C34.0 37.0 37.0 13.0 50 13.0 C63.0 13.0 66.0 37.0 50 50 Z" transform="rotate(55 50 50)" stroke-width="6.2"/><path d="M50 50 C34.0 36.2 37.0 10.5 50 10.5 C63.0 10.5 66.0 36.2 50 50 Z" transform="rotate(122 50 50)" stroke-width="6.2"/><path d="M50 50 C34.0 37.4 37.0 14.0 50 14.0 C63.0 14.0 66.0 37.4 50 50 Z" transform="rotate(175 50 50)" stroke-width="6.2"/><path d="M50 50 C34.0 36.8 37.0 12.3 50 12.3 C63.0 12.3 66.0 36.8 50 50 Z" transform="rotate(246 50 50)" stroke-width="6.2"/><path d="M50 50 C34.0 36.6 37.0 11.7 50 11.7 C63.0 11.7 66.0 36.6 50 50 Z" transform="rotate(295 50 50)" stroke-width="6.2"/><circle cx="50" cy="50" r="11" fill="#f5d90a" stroke="#f5d90a" stroke-width="4"/></g></svg></i>
 </div>
 
-  <div class="meta"><span><b>cta-experiments</b> / gallery</span><span>02 buttons · v1.0 · MIT</span></div>
+  <div class="meta"><span><b>cta-experiments</b> / gallery</span><span>02 buttons</span></div>
 
   <header>
     <span class="crumb">by gauri tsering sharma</span>
@@ -122,26 +119,22 @@
     <!-- One card per CTA. To add one, copy this block and point it at the new folder. -->
     <a class="card" href="ctas/vine/index.html">
       <div class="card-stage">
-        <span class="card-tag">01 · hover it</span>
         <span class="vine-cta" id="vine-demo"><span class="vine-cta__label">button</span></span>
       </div>
       <div class="card-body">
         <h2>vine button</h2>
         <p>Vines slip out from behind the button, wrap over its edges and open into flowers.</p>
-        <div class="tags"><span>canvas</span><span>hover · tap</span><span>no deps</span></div>
         <span class="open">open the playground →</span>
       </div>
     </a>
 
     <a class="card" href="ctas/disco-button/index.html">
       <div class="card-stage" id="disco-stage">
-        <span class="card-tag">02 · hover it</span>
         <span class="disco-button" id="disco-demo"><span class="disco-button__label">button</span></span>
       </div>
       <div class="card-body">
         <h2>disco button</h2>
         <p>A mirror ball drops in above the button. The page dims and its light spots sweep across, showing what's underneath.</p>
-        <div class="tags"><span>canvas</span><span>hover · click</span><span>no deps</span></div>
         <span class="open">open the playground →</span>
       </div>
     </a>
